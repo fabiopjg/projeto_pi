@@ -1,0 +1,69 @@
+<html>
+
+    <head>
+        <title> Projeto Deméter</title>
+
+        <!--Estilo e Firebase-->
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  
+        <script src="https://www.gstatic.com/firebasejs/9.17.2/firebase-app.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.bundle.min.js"></script>
+        <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/9.18.0/firebase-analytics.js"></script>
+
+        <link href="https://www.gstatic.com/firebasejs/9.18.0/firebase-app.js" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
+        
+        <!--Firebase-->
+
+        <script src="https://www.gstatic.com/firebasejs/9.17.2/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js"></script> 
+        <script src="https://www.gstatic.com/firebasejs/9.17.2/firebase-analytics.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/3.6.1/firebase.js"></script>
+    </head>
+
+    <body>
+ 
+        <span id="humidity" class="statistic">-</span><br>
+        <span id="temperature" class="statistic">-</span>
+ 
+        <script>
+
+            const firebaseConfig = {
+                "apiKey": "AIzaSyA1AK-qIwLdcAXK2ZmInUwpY2mJfQmPFDc",
+                "authDomain": "sensors-c01e7.firebaseapp.com",
+                "databaseURL": "https://sensors-c01e7-default-rtdb.firebaseio.com",
+                "projectId": "sensors-c01e7",
+                "storageBucket": "sensors-c01e7.appspot.com",
+                "messagingSenderId": "157864863765",
+                "appId": "1:157864863765:web:2f9298c5c94832ddc4c61c",
+                "measurementId": "G-LX20Z89VVC"
+              };
+              
+            
+            firebase.initializeApp(firebaseConfig);
+            
+            var humidity = document.getElementById('humidity');
+            
+            var x = firebaseRef = firebase.database().ref().child("Sensors/humidity");
+            x.on('value', function(datasnapshot){
+                humidity.innerText = datasnapshot.val();
+            })
+
+            var temperature = document.getElementById('temperature');
+            
+            var x = firebaseRef = firebase.database().ref().child("Sensors/temperature");
+            x.on('value', function(datasnapshot){
+                temperature.innerText = datasnapshot.val();
+            })
+
+            
+            var db = firebase.database();
+            
+            
+        </script>
+    </body>
+</html>

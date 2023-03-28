@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,500;1,100&display=swap');
+
+*{
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.center{
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2%;
+}
+
+body{
+    background-color: #e5e5e5;
+}
+
+header{
+    padding: 20px 0;
+    background-color: #F8F8FB;
+    box-shadow: 5px 5px 5px rgba(167, 165, 165, 0.389);
+}
+
+.logo img{
+    width: 40px;
+}
+
+.content h3{
+    font-size: 30px;
+}
+
+.title h3{
+    font-size: 30px;
+    padding-top: 5px;
+    padding-left: 20px;
+}
+
+h3{
+    color: #274C77;
+}
+
+
+.menu{
+    text-align: right;
+    padding-left: 460px;
+    padding-top: 50px;
+}
+
+.relogio{
+    color: #516F91;
+    font-size: 10px;
+    display: flex;
+    justify-items: space-around;
+    height: 20px;
+    margin-left: 50px;
+}
+
+#tempo{
+    padding: 4px;
+}
+
+.all_cards{
+    display: flex;
+    width: auto;
+    margin-left: 50px;
+    margin-right: 50px;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+
+.card_temperatura{
+    display: flex;
+    width: 500px;
+    padding: 40px;
+    background-color: #F8F8FB;
+    text-align: justify;
+    box-shadow: 5px 5px 5px rgba(167, 165, 165, 0.389);
+    position: relative;
+    border-radius: 30px;
+    margin-left: 50px;
+}
+
+.card_umidade_ar{
+    display: flex;
+    width: 500px;
+    padding: 40px;
+    background-color: #F8F8FB;
+    text-align: justify;
+    box-shadow: 5px 5px 5px rgba(167, 165, 165, 0.389);
+    position: relative;
+    border-radius: 30px;
+    margin-left: 50px;
+}
+
+.card_irrigacao{
+    display: flex;
+    width: 500px;
+    padding: 40px;
+    background-color: #F8F8FB;
+    text-align: justify;
+    box-shadow: 5px 5px 5px rgba(167, 165, 165, 0.389);
+    position: relative;
+    border-radius: 30px;
+    margin-left: 50px;
+    margin-top: 20px;
+}
+
+.card_ventilacao{
+    display: flex;
+    width: 500px;
+    padding: 40px;
+    background-color: #F8F8FB;
+    text-align: justify;
+    box-shadow: 5px 5px 5px rgba(167, 165, 165, 0.389);
+    position: relative;
+    border-radius: 30px;
+    margin-left: 50px;
+    margin-top: 20px;
+}
+
+.card_umidade_solo{
+    display: flex;
+    width: 1050px;
+    padding: 40px;
+    background-color: #F8F8FB;
+    text-align: justify;
+    box-shadow: 5px 5px 5px rgba(167, 165, 165, 0.389);
+    position: relative;
+    border-radius: 30px;
+    margin-left: 50px;
+    margin-top: 20px;
+}
+
+/*Conteúdo dos cards*/
+
+.content_temperatura{
+    font-size: 40px;
+    display: flex;
+    margin-left: 50px;
+    color: #516F91;
+}
+
+p{
+    padding-left: 5px;
+}
+
+.content_umidade_ar{
+    font-size: 40px;
+    display: flex;
+    margin-left: 50px;
+    color: #516F91;
+}
+
+.content_umidade_solo{
+    font-size: 40px;
+    display: flex;
+    margin-left: 615px;
+    color: #516F91;
+}
+
+/*Botões de irrigação e ventilação*/
+
+#irrigacao_button{
+    border: none;
+    padding: 10px;
+    border-radius: 50px;
+    margin-top: 10px;
+    margin-left: 120px;
+    background-color: #516F91;
+    color: #ffffff;
+    font-weight: normal;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.2s ease-in-out;
+}
+
+#irrigacao_button:hover{
+    background-color: transparent;
+    color:#516F91;
+    transition: all 0.2s ease-in-out;
+}
+
+#ventilacao_button{
+    border: none;
+    padding: 10px;
+    border-radius: 50px;
+    margin-top: 5px;
+    margin-left: 120px;
+    background-color: #516F91;
+    color: #ffffff;
+    font-weight: normal;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.2s ease-in-out;
+}
+
+#ventilacao_button:hover{
+    background-color: transparent;
+    color:#516F91;
+    transition: all 0.2s ease-in-out;
+}
+
+

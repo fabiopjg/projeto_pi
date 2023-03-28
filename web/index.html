@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="assets/css/style.css" rel="stylesheet">
+
+
+
+        <link rel="shortcut icon" href="assets/images/icon.png" type="image/x-icon">
+        <title>Projeto Deméter</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  
+        <script src="https://www.gstatic.com/firebasejs/9.17.2/firebase-app.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.bundle.min.js"></script>
+        <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/9.18.0/firebase-analytics.js"></script>
+
+        <link href="https://www.gstatic.com/firebasejs/9.18.0/firebase-app.js" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
+        
+        <!--Firebase-->
+
+        <script src="https://www.gstatic.com/firebasejs/9.17.2/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js"></script> 
+        <script src="https://www.gstatic.com/firebasejs/9.17.2/firebase-analytics.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/3.6.1/firebase.js"></script>
+
+    </head>
+
+    <body>
+        <header>
+            <div class="center">
+                <div class="logo"><img src="assets/images/icon_nav.png"></div>
+                <div class="title">
+                    <h3>Projeto Deméter</h3>
+                </div>
+                <div class="menu">
+                    <div class="relogio">
+                        <div>
+                            <span id="horas">00</span>
+                            <span id="tempo">Horas</span>
+                        </div>
+        
+                        <div>
+                            <span id="minutos">00</span>
+                            <span id="tempo">Minutos</span>
+                        </div>
+        
+                        <div>
+                            <span id="segundos">00</span>
+                            <span id="tempo">Segundos</span>
+                        </div>
+        
+                    </div>
+                </div>
+            </div>
+
+
+        </header>
+        
+        <div class="all_cards">
+
+            <div class="card_temperatura">
+
+                <div class="content"> 
+                    <h3 id="title_temperatura">Temperatura</h3>
+                </div>
+                
+                <div class="content_temperatura">
+                        <span id="temperature" class="statistic">00</span> 
+                        <p>°C</p>
+                </div>
+
+
+            </div>
+
+            <div class="card_umidade_ar">
+
+                <div class="content"> 
+                    <h3 id="title_umidade_ar">Umidade do ar</h3>
+                </div>
+                
+                <div class="content_umidade_ar">
+                    <span id="humidity" class="statistic">00</span> 
+                    <p>%</p>
+                </div>
+
+            </div>
+
+            <div class="card_irrigacao">
+
+                <div class="content"> 
+                    <h3 id="title_irrigacao">Irrigação</h3>
+                </div>
+
+                <div class="content_irrigacao">
+                    <button id="irrigacao_button">Ligado</button>
+                </div>
+
+            </div>
+
+
+            <div class="card_ventilacao">
+
+                <div class="content"> 
+                    <h3 id="title_ventilacao">Ventilação</h3>
+                </div>
+
+                <div class="content_ventilacao">
+                    <button id="ventilacao_button">Ligado</button> 
+                </div>
+
+            </div>
+
+            <div class="card_umidade_solo">
+
+                <div class="content"> 
+                    <h3 id="title_umidade_solo">Umidade Solo</h3>
+                </div>
+
+                <div class="content_umidade_solo">
+                    <span id="higrometro" class="statistic">00</span> 
+                </div>
+
+            </div>
+
+        </div>
+
+        <script>
+
+            const firebaseConfig = {
+                "apiKey": "AIzaSyA1AK-qIwLdcAXK2ZmInUwpY2mJfQmPFDc",
+                "authDomain": "sensors-c01e7.firebaseapp.com",
+                "databaseURL": "https://sensors-c01e7-default-rtdb.firebaseio.com",
+                "projectId": "sensors-c01e7",
+                "storageBucket": "sensors-c01e7.appspot.com",
+                "messagingSenderId": "157864863765",
+                "appId": "1:157864863765:web:2f9298c5c94832ddc4c61c",
+                "measurementId": "G-LX20Z89VVC"
+              };
+              
+            
+            firebase.initializeApp(firebaseConfig);
+            
+            var humidity = document.getElementById('humidity');
+            
+            var x = firebaseRef = firebase.database().ref().child("Sensors/humidity");
+            x.on('value', function(datasnapshot){
+                humidity.innerText = datasnapshot.val();
+            })
+
+            var temperature = document.getElementById('temperature');
+            
+            var x = firebaseRef = firebase.database().ref().child("Sensors/temperature");
+            x.on('value', function(datasnapshot){
+                temperature.innerText = datasnapshot.val();
+            })
+
+            var higrometro = document.getElementById('higrometro');
+            
+            var x = firebaseRef = firebase.database().ref().child("Sensors/higrometro");
+            x.on('value', function(datasnapshot){
+                higrometro.innerText = datasnapshot.val();
+            })
+
+            var db = firebase.database(); 
+
+        </script>
+
+        <script src="assets/js/script.js"> </script>
+
+    </body>
+</html>
